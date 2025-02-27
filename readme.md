@@ -1,5 +1,11 @@
-### ma hoa code 
-`pyarmor gen -O encode -i app`
+docker build -t api_web_leech_truyen_audio .
 
-### pyinstaller
-`pyinstaller --onefile run.py`
+docker run -d --restart always -v /root/dir_api_web_leech_truyen_audio:/_app_/utils/download --name api_web_leech_truyen_audio -p 60074:60074 api_web_leech_truyen_audio
+
+docker save -o api_web_leech_truyen_audio.tar api_web_leech_truyen_audio
+
+docker load -i api_web_leech_truyen_audio.tar
+
+
+docker exec -it api_web_leech_truyen_audio bash
+
